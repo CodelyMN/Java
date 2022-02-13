@@ -1,7 +1,7 @@
 import java.util.*; 
 public class Repeat
 {
-  
+  // ene class iig shuud copydood ashiglaj bolnoo
    public static void main(String[] args) 
       {
             Scanner scan=new Scanner(System.in);
@@ -22,7 +22,7 @@ public class Repeat
                            count++; // davhtssan ug hden udaa davhtsaj bgaag nemegduulj bn
 
                      }
-
+           // ene bol comment shuu
                    }
                    srr[count1]=temp; // srr iin count1 index deh elemented temp buyu tur hadgalsan ugee hiij bn
                      rev[count1]=count; // massiviin urtiig todorhoiloh rev huvisagchid count iin buyu hden udaa davhtssan toog hiij bn
