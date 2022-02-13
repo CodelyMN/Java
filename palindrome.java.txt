@@ -1,0 +1,26 @@
+
+public class PalindomeNumberChecker
+{
+    
+ 
+  public static void main(String[] args) {
+    
+    int too = 2341, a = 0, b;
+    int num = too;
+    while (too != 0) {
+      b = too % 10;
+      a = a * 10 + b;
+      too /= 10;
+    }
+    
+    // check if reversedNum and originalNum are equal
+    if (num == a) {
+      System.out.println(num + " Palindrome too mon");
+    }
+    else {
+      System.out.println(num + " Palindrome too bish");
+    }
+  }
+}
+ 
+

@@ -1,0 +1,42 @@
+import java.util.*; 
+public class Repeat
+{
+  
+   public static void main(String[] args) 
+      {
+            Scanner scan=new Scanner(System.in);
+            String s =scan.nextLine(); // garaas oguulber avch bn
+            int count=0;
+            int count1=0;       
+            String[] arr=s.split(" "); // oguulbert orj irsen ugnuudiig hooson zaigaar n huvaaj tus tusad n massiv blgoj hadgalj bga
+            String[] srr=new String[arr.length];// srr gej nertei shine massiv uusgeed terniih n elementiin urt n arr massiviin urttai tentsuu bhaar
+            int[] rev=new int[arr.length]; // bas massiviin elementiin urtiig todorhoilohiin tuld int toroltei massiv uusgesen bas arr massiviin urttai adilhan bn 
+            for(int i=0;i<arr.length; i++){ // massiv iig neg negeer n davtaj bn
+                if(arr[i]!="NULL"){ // hooson utgatai esehiig shalgaj bn 
+                    String temp=arr[i]; // tuhain davtaltaar orj irsen massiviin neg index iig(ugnuudiig gsen ug) temp huvisagchid hadgalj avna
+                    for(int j=i+1;j<arr.length; j++){ // daraa n ter ugiig oruulahguigeer daraagiin ugnuudiig avahiin tuld index iig 1 eer nemegduulj davtaj bn
+                         if(temp.equals(arr[j])) // temp huvisagchid hadgalsan ugtei tentsuu bgaa esehiig shalgaj bn
+                     {
+                           System.out.println(arr[j]+" ug oguulbert davhtsaj bn");
+                           arr[j]="NULL"; // tentsuu bnuu gdeg ugiig hadgalsan massiv iin utgiig NULL buyu hooson bolgoj bn
+                           count++; // davhtssan ug hden udaa davhtsaj bgaag nemegduulj bn
+
+                     }
+
+                   }
+                   srr[count1]=temp; // srr iin count1 index deh elemented temp buyu tur hadgalsan ugee hiij bn
+                     rev[count1]=count; // massiviin urtiig todorhoiloh rev huvisagchid count iin buyu hden udaa davhtssan toog hiij bn
+                     count=0;// rev massivt davhtssan toog hiisnii daraa daraagiin ugiig shalgah uchiraas toologchoo teglej bn
+                     count1++; // massiv iin daraagiin element ruu orohiin dult count1 iig nemegduulj bn
+                  }
+
+                  }
+                 for(int i=0;i<count1;i++)  
+                 System.out.println(srr[i]+"  "+rev[i]); // ymr ug hden udaa davhtsaniig hevlej bn
+  }
+  }
+
+
+ 
+    
+

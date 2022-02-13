@@ -1,0 +1,38 @@
+import java.util.*;
+import java.util.Scanner;
+public class Main extends Advice{
+    
+    public static void main(String[] args)
+    {
+        Scanner scan = new Scanner(System. in);
+        System.out.println("Tanii ovog ?");
+        String lname = scan.nextLine();
+        System.out.println("Tanii ner ?");
+        String fname = scan.nextLine();
+        System.out.println("Ta ymr ajil hiideg ve? (oyutan bl oyutan gj bichne uu!)");
+        String work = scan.nextLine();
+        Information user = new Information(fname,lname,work);
+        Main advice = new Main();
+        System.out.println("Ta heden nastai ve ?");
+        user.age = scan.nextInt();
+        System.out.println("Tanii biyiin jin heden kg ve?");
+        user.weight = scan.nextInt();
+        System.out.println("Tanii biyiin undur hed sm ve?");
+        user.height = scan.nextInt();
+        System.out.println("Ta heden tsagt serdeg ve?");
+        user.WakeUpTime = scan.nextInt();
+        System.out.println("Ta heden tsagt untdag ve?");
+        user.SleepTime = scan.nextInt();
+        System.out.println("Ta udurt heden tsagiig ur dungui ungruuldeg ve?");
+        user.FreeTimeEachDay = scan.nextInt();
+        scan.close();
+        
+        System.out.println("\n\n"+user.name + " tanii medeelel"+"\n -------------------- \n | nas : "+user.age+"\n | biyiin jin : "+user.weight+"kg"+"\n | mergejil : "+user.job+"\n --------------------\n");
+        System.out.println("\n\n --------------- Ur dun ----------------");
+        System.out.println(advice.heightRatioWeight(user.height , user.weight));
+        System.out.println(advice.SleepTime(user.WakeUpTime , user.SleepTime , user.job));
+    
+        System.out.println("\n\n ----------------Zuvluguu --------------");
+        System.out.println(advice.CalculateAdvice(advice.Sleep, advice.diffWeight, user.FreeTimeEachDay ,user.job));
+    }
+}

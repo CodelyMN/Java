@@ -1,0 +1,88 @@
+import java.util.*;
+
+public class Advice  
+{
+    
+        int diffWeight;
+        int Sleep;
+        int weight;
+        public String heightRatioWeight(int height, int weight)
+        {
+        
+            diffWeight = (height - weight) - 100 ; 
+            
+            if( diffWeight > 5 || diffWeight < 5)
+            {
+                diffWeight = 0;
+                weight = 1;
+                return "\n Tanii jin heviin hemjeend baina";
+            }
+            else if(diffWeight > 20)
+            {   
+                weight = 2;
+                return "\n Tanii jingiin hemjee heterhii baga bn";
+            }
+            else if( diffWeight < -20)
+            {   
+                weight = 3;
+                return "\n Tanii jingiin hemjee heterhii ih bn";
+            }
+            else if(diffWeight == 0)
+            {
+                return "";
+            }
+            else { 
+                weight = 4;
+                return "\n Tanii jin bolon unduriin haritsaanaas tootsoolohod heviin baina";}
+        }
+        
+        public String SleepTime(int WakeUpTime , int SleepTime , String job)
+        {
+            Sleep = SleepTime-WakeUpTime;
+            switch(Sleep)
+            {
+                case 4:
+                case 5:
+                case 6: Sleep=1;
+                    if(job == "oyutan")
+                {
+                    return "\n Ta oyutan hun gehed heterhii baga untah yumaa hha";
+                }
+                else { return "\n Ta baga tsag untdag yum bn"; }
+                case 9:
+                case 10:
+                case 11: Sleep=2; return "\n Ta heterhii ih untdag yum bn";
+                default : Sleep=3; return "\n Tanii untlagiin tsag heviin baina;";
+            }
+        }
+        public String CalculateAdvice(int Sleep , int diffWeight , int free, String job)
+        {
+            String adviceText="";
+            switch(Sleep)
+            {
+                case 1 : if(job == "oyutan"){
+                    if(free > 5){
+                        adviceText = adviceText+"\n Demii unguruuh tsag aa hicheeldee bolon untah tsagtaa zartsuulah heregtei. Ta heterhii baga untaad bn";
+                    }
+                    else { adviceText = adviceText+"\n Sain untaj amraad hicheelee sain hiigeerei"; }
+                }else {adviceText = adviceText+"\n Sain untaj amarval ajliin buteemj ch nemegdene gedgiig sanaarai."; }
+                case 2 : adviceText = adviceText+"\n Heterhii ih untah n eruul mend bolon, uram zorigt sorgoor nolooldog gedgiig martaj blohgui shu";
+                case 3 : adviceText = adviceText+"\n Ta uneheer sain noiroo avch chaddag yum bn";
+            }
+            switch(weight)
+            {
+                case 1: adviceText = adviceText+"\n  Tanii jin heviin hemjeend baina tanid bayr hurgey ";
+                case 2: adviceText = adviceText+"\n  Tanii jingiin hemjee heterhii baga bgaa tul nemelt tejeel heregleh shaardlagatai";
+                case 3: if(free >5)
+                {
+                    adviceText = adviceText+"\n Tanii jingiin hemjee heterhii ih bgaa tul ta demii ungruuh tsagaaraa iluudel jingiin esreg dasgal hudulguun hiigeed uzeeerei. ";
+                }
+                else{
+                adviceText = adviceText+"\n Tanii jingiin hemjee heterhii ih bgaa tul nemelt dasgal hudulguun hiih shaardlagatai ";}
+                case 4: adviceText = adviceText+"\n  Tanii jin bolon unduriin haritsaanaas tootsoolohod targalalt bolon jingiin dutagdal alga ";
+                    
+            }
+            return adviceText;
+        }
+}
+
